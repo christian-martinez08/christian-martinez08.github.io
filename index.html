@@ -1,1 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manual de Modificadores de Acceso y Encapsulamiento en C#</title>
+    <style>
+        /* Cumplimiento estricto de requerimientos: Arial 12, texto negro en todo el documento */
+        body {
+            font-family: Arial, sans-serif;
+            font-size: 12pt;
+            color: #000000;
+            background-color: #ffffff;
+            line-height: 1.5;
+            margin: 0;
+            padding: 40px 20px;
+        }
 
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Encabezados y títulos estrictamente en color negro */
+        h1, h2, h3, h4, p, li, span, code, pre {
+            color: #000000 !important;
+        }
+
+        /* Portada Institucional según estilo APA */
+        .portada {
+            text-align: center;
+            margin-bottom: 60px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid #000000;
+        }
+
+        .portada h1 {
+            font-size: 16pt;
+            font-weight: bold;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+        }
+
+        .portada p {
+            margin: 8px 0;
+            font-size: 12pt;
+        }
+
+        .seccion {
+            margin-bottom: 40px;
+        }
+
+        .seccion h2 {
+            font-size: 14pt;
+            font-weight: bold;
+            border-bottom: 1px solid #000000;
+            padding-bottom: 5px;
+            margin-top: 30px;
+        }
+
+        .seccion h3 {
+            font-size: 12pt;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+        /* Cajas de código con bordes sobrios, sin resaltar en azul */
+        pre {
+            background-color: #f9f9f9;
+            border: 1px solid #000000;
+            padding: 15px;
+            font-family: "Courier New", Courier, monospace;
+            font-size: 11pt;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            margin: 15px 0;
+        }
+
+        ul {
+            margin-left: 20px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <!-- PORTADA INSTITUCIONAL (Formato APA 7) -->
+        <div class="portada">
+            <p><strong>REPUBLICA BOLIVARIANA DE VENEZUELA</strong></p>
+            <p>INSTITUTO UNIVERSITARIO DE TECNOLOGÍA</p>
+            <p>ELECTIVA PROFESIONAL - DESARROLLO WEB</p>
+            <br><br><br>
+            <h1>MANUAL DIDÁCTICO: MODIFICADORES DE ACCESO Y ENCAPSULAMIENTO EN C# (VERSIÓN 5)</h1>
+            <br><br><br>
+            <p><strong>Autor:</strong> Christian Martínez</p>
+            <p><strong>C.I.:</strong> 32.858.038</p>
+            <p><strong>Profesor:</strong> Robyir Loreto</p>
+            <p><strong>Fecha:</strong> Octubre, 2026</p>
+        </div>
+
+        <!-- CONTENIDO DEL MANUAL -->
+        <div class="seccion">
+            <h2>1. Introducción al Encapsulamiento</h2>
+            <p>El encapsulamiento es uno de los cuatro pilares fundamentales de la Programación Orientada a Objetos (POO). Consiste en ocultar los detalles internos de implementación de un objeto y proteger su estado directo frente a accesos o modificaciones no autorizadas desde el exterior.</p>
+            <p>En C#, el encapsulamiento se logra mediante el uso de <strong>modificadores de acceso</strong> y la implementación de <strong>propiedades</strong> para controlar cómo se leen y escriben las variables privadas de una clase.</p>
+        </div>
+
+        <div class="seccion">
+            <h2>2. Modificadores de Acceso en C# v5</h2>
+            <p>Los modificadores de acceso definen el alcance y la visibilidad de las clases, métodos y atributos dentro del programa. A continuación se explican los principales:</p>
+
+            <h3>a) public</h3>
+            <p>El acceso no está restringido. Los miembros declarados como públicos pueden ser leídos y modificados desde cualquier parte de la aplicación o proyecto.</p>
+
+            <h3>b) private</h3>
+            <p>El acceso está limitado estrictamente al interior de la clase donde fue declarado. Ninguna otra clase o miembro externo puede acceder a él directamente.</p>
+
+            <h3>c) protected</h3>
+            <p>El acceso está restringido a la clase contenedora o a los tipos derivados (clases hijas que hereden de la clase principal).</p>
+
+            <h3>d) internal</h3>
+            <p>El acceso está limitado únicamente a los archivos que formen parte del mismo ensamblado (proyecto compilado).</p>
+        </div>
+
+        <div class="seccion">
+            <h2>3. Ejemplo Práctico en C#</h2>
+            <p>A continuación se presenta un código de demostración que ilustra la implementación correcta de encapsulamiento y modificadores de acceso en una clase de C#:</p>
+
+<pre>
+using System;
+
+namespace ManualPOO
+{
+    // Clase principal
+    public class CuentaBancaria
+    {
+        // Atributo privado: Encapsulado (no accesible desde fuera directamente)
+        private double saldo;
+
+        // Atributo protegido: Accesible por clases derivadas
+        protected string tipoCuenta;
+
+        // Atributo público: Accesible desde cualquier lugar
+        public string Titular;
+
+        // Constructor
+        public CuentaBancaria(string titular, double saldoInicial)
+        {
+            this.Titular = titular;
+            this.saldo = saldoInicial;
+            this.tipoCuenta = "Ahorros";
+        }
+
+        // Propiedad pública para lectura/escritura controlada del saldo
+        public double Saldo
+        {
+            get { return saldo; }
+        }
+
+        // Método público para depositar fondos de forma segura
+        public void Depositar(double monto)
+        {
+            if (monto > 0)
+            {
+                saldo += monto;
+                Console.WriteLine("Depósito exitoso. Nuevo saldo: " + saldo);
+            }
+        }
+    }
+}
+</pre>
+        </div>
+
+        <div class="seccion">
+            <h2>4. Conclusión</h2>
+            <p>El uso adecuado de los modificadores de acceso permite construir sistemas software robustos, mantenibles y seguros, impidiendo la manipulación inadecuada de los datos y garantizando la integridad de las clases.</p>
+        </div>
+
+    </div>
+
+</body>
+</html>
