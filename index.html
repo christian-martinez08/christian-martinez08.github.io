@@ -141,56 +141,56 @@
             <p>Siguiendo cada uno de estos pasos detallados, habrás logrado configurar y desplegar con éxito la estructura de tu sitio web en GitHub pages.</p>
             <p>Con esto ya tendrías tu página completamente lista, funcional y accesible mediante la URL segura para presentar tu sitio web sin inconvenientes.</p>
         </div>
-
-        <!-- CONTENIDO 2: CLASES DE C# (MODIFICADORES Y ENCAPSULAMIENTO) -->
+        <!-- SECCIÓN 2: CONTENIDO TÉCNICO DE C# -->
         <div class="seccion">
             <h2>2. Contenido Técnico: Modificadores de Acceso y Encapsulamiento en C# v5</h2>
-            <p>Como parte de los requerimientos académicos, este sitio web integra la explicación y ejemplos sobre las clases en C# versión 5, centrándose en el control de acceso y el encapsulamiento.</p>
-
-            <h3>Modificadores de Acceso</h3>
+            
+            <h3>¿Qué son y para qué sirven los Modificadores de Acceso?</h3>
+            <p>Son palabras clave que definen la visibilidad y el nivel de accesibilidad de las clases y sus miembros (atributos y métodos). Sirven fundamentalmente para proteger la integridad de los datos, evitar modificaciones accidentales desde el exterior y controlar qué partes del programa pueden interactuar con la información.</p>
             <ul>
                 <li><strong>Public:</strong> Permite el acceso sin restricciones desde cualquier otra clase o ensamblado.</li>
                 <li><strong>Private:</strong> Restringe el acceso de manera exclusiva al interior de la clase donde se declara.</li>
                 <li><strong>Protected:</strong> Otorga visibilidad a la clase contenedora y a sus clases derivadas (herencia).</li>
             </ul>
 
-            <h3>Ejemplo Práctico en C#</h3>
-<pre>
+            <h3>Encapsulamiento de Clases: ¿Qué es y para qué sirve?</h3>
+            <p>El encapsulamiento de clases es el principio fundamental de la programación orientada a objetos que consiste en agrupar en una sola estructura (la clase) tanto los datos (atributos) como las operaciones que actúan sobre ellos (métodos), ocultando el estado interno del objeto al resto del programa.</p>
+            <p><strong>¿Para qué sirve?</strong> Sirve para blindar la información sensible, evitando que clases externas alteren los datos de forma incorrecta o corrupta. Su propósito principal es garantizar la seguridad y la modularidad del código, obligando a que cualquier consulta o modificación de los atributos privados se realice exclusivamente a través de métodos controlados y seguros definidos en la misma clase.</p>
+
+            <h3>Ejemplo Práctico en C# v5</h3>
+            <p>A continuación, se presenta un código estructurado que demuestra el uso de atributos privados encapsulados y métodos públicos de acceso en C# v5:</p>
+            
+            <pre style="background-color: #f9f9f9; padding: 15px; border: 1px solid #000000; text-align: left; font-family: monospace; font-size: 11pt; overflow-x: auto;">
 using System;
 
 namespace ManualGitHubCSharp
 {
+    // Clase pública accesible desde cualquier módulo
     public class Persona
     {
-        // Atributo privado (Encapsulado)
+        // Atributo privado (Encapsulado): Protegido contra modificaciones externas directas
         private string cedula;
 
-        // Atributo público
+        // Atributo público: Accesible desde cualquier instancia
         public string Nombre;
 
-        // Constructor
+        // Constructor para inicializar los valores de la clase
         public Persona(string nombre, string cedula)
         {
             this.Nombre = nombre;
             this.cedula = cedula;
         }
 
-        // Método público para consultar el dato privado de forma segura
+        // Método público para consultar el valor del atributo privado de forma segura
         public string ObtenerCedula()
         {
             return cedula;
         }
     }
 }
-</pre>
+            </pre>
         </div>
 
-        <div class="seccion">
-            <h2>3. Conclusión</h2>
-            <p>La integración de herramientas de despliegue moderno como GitHub Pages combinada con los fundamentos de la programación orientada a objetos en C# permite estructurar documentación técnica clara, accesible y formal bajo normativas estandarizadas.</p>
-        </div>
-
-    </div>
 
 </body>
 </html>
