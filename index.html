@@ -170,15 +170,19 @@ namespace ManualGitHubCSharp
     {
         // Atributo privado (Encapsulado): Protegido contra modificaciones externas directas
         private string cedula;
-
+         
+        // Atributo protegido: Accesible en esta clase y sus clases derivadas
+        protected int codigoInterno;
+                
         // Atributo público: Accesible desde cualquier instancia
         public string Nombre;
-
+       
         // Constructor para inicializar los valores de la clase
-        public Persona(string nombre, string cedula)
+        public Persona(string nombre, string cedula, int codigo)
         {
             this.Nombre = nombre;
             this.cedula = cedula;
+            this.codigoInterno = codigo;
         }
 
         // Método público para consultar el valor del atributo privado de forma segura
