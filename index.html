@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Manual de Modificadores de Acceso y Encapsulamiento en C#</title>
+    <title>Manual: Creación de Sitios Web en GitHub Pages y Clases en C#</title>
     <style>
-        /* Cumplimiento estricto de requerimientos: Arial 12, texto negro en todo el documento */
+        /* Cumplimiento estricto de normas APA: Arial 12, todo el texto en negro */
         body {
             font-family: Arial, sans-serif;
             font-size: 12pt;
@@ -21,12 +21,12 @@
             margin: 0 auto;
         }
 
-        /* Encabezados y títulos estrictamente en color negro */
+        /* Encabezados estrictamente en color negro */
         h1, h2, h3, h4, p, li, span, code, pre {
             color: #000000 !important;
         }
 
-        /* Portada Institucional según estilo APA */
+        /* Portada Institucional formato APA 7 */
         .portada {
             text-align: center;
             margin-bottom: 60px;
@@ -35,7 +35,7 @@
         }
 
         .portada h1 {
-            font-size: 16pt;
+            font-size: 15pt;
             font-weight: bold;
             margin-bottom: 30px;
             text-transform: uppercase;
@@ -64,7 +64,6 @@
             margin-top: 20px;
         }
 
-        /* Cajas de código con bordes sobrios, sin resaltar en azul */
         pre {
             background-color: #f9f9f9;
             border: 1px solid #000000;
@@ -91,11 +90,11 @@
 
         <!-- PORTADA INSTITUCIONAL (Formato APA 7) -->
         <div class="portada">
-            <p><strong>REPUBLICA BOLIVARIANA DE VENEZUELA</strong></p>
+            <p><strong>REPÚBLICA BOLIVARIANA DE VENEZUELA</strong></p>
             <p>INSTITUTO UNIVERSITARIO DE TECNOLOGÍA</p>
             <p>ELECTIVA PROFESIONAL - DESARROLLO WEB</p>
             <br><br><br>
-            <h1>MANUAL DIDÁCTICO: MODIFICADORES DE ACCESO Y ENCAPSULAMIENTO EN C# (VERSIÓN 5)</h1>
+            <h1>MANUAL TÉCNICO: CÓMO CREAR UN SITIO WEB EN GITHUB PAGES Y APLICACIÓN DE CLASES EN C#</h1>
             <br><br><br>
             <p><strong>Autor:</strong> Christian Martínez</p>
             <p><strong>C.I.:</strong> 32.858.038</p>
@@ -103,73 +102,58 @@
             <p><strong>Fecha:</strong> Octubre, 2026</p>
         </div>
 
-        <!-- CONTENIDO DEL MANUAL -->
+        <!-- CONTENIDO 1: MANUAL DE GITHUB PAGES -->
         <div class="seccion">
-            <h2>1. Introducción al Encapsulamiento</h2>
-            <p>El encapsulamiento es uno de los cuatro pilares fundamentales de la Programación Orientada a Objetos (POO). Consiste en ocultar los detalles internos de implementación de un objeto y proteger su estado directo frente a accesos o modificaciones no autorizadas desde el exterior.</p>
-            <p>En C#, el encapsulamiento se logra mediante el uso de <strong>modificadores de acceso</strong> y la implementación de <strong>propiedades</strong> para controlar cómo se leen y escriben las variables privadas de una clase.</p>
+            <h2>1. Manual: ¿Cómo crear un sitio web en GitHub Pages?</h2>
+            <p>El presente manual describe los pasos metodológicos necesarios para desplegar un sitio web estático utilizando la plataforma de alojamiento GitHub Pages de forma segura y directa mediante URL:</p>
+            
+            <h3>Paso 1: Creación del Repositorio</h3>
+            <p>Se debe iniciar sesión en GitHub y crear un nuevo repositorio público. Es fundamental configurar el nombre del repositorio para establecer el directorio raíz del sitio.</p>
+
+            <h3>Paso 2: Subida del Archivo Principal</h3>
+            <p>Para que el servidor reconozca la página web de manera automática, se debe agregar un archivo llamado estrictamente <strong>index.html</strong> que contenga la estructura del sitio.</p>
+
+            <h3>Paso 3: Activación de GitHub Pages</h3>
+            <p>En las opciones del repositorio, dentro de la pestaña <strong>Settings</strong> y la sección <strong>Pages</strong>, se configura la rama de despliegue (Branch) seleccionando la rama principal (por ejemplo, <code>main</code>) en la ruta raíz (<code>/root</code>). Tras unos minutos, el sistema genera la URL segura definitiva.</p>
         </div>
 
+        <!-- CONTENIDO 2: CLASES DE C# (MODIFICADORES Y ENCAPSULAMIENTO) -->
         <div class="seccion">
-            <h2>2. Modificadores de Acceso en C# v5</h2>
-            <p>Los modificadores de acceso definen el alcance y la visibilidad de las clases, métodos y atributos dentro del programa. A continuación se explican los principales:</p>
+            <h2>2. Contenido Técnico: Modificadores de Acceso y Encapsulamiento en C# v5</h2>
+            <p>Como parte de los requerimientos académicos, este sitio web integra la explicación y ejemplos sobre las clases en C# versión 5, centrándose en el control de acceso y el encapsulamiento.</p>
 
-            <h3>a) public</h3>
-            <p>El acceso no está restringido. Los miembros declarados como públicos pueden ser leídos y modificados desde cualquier parte de la aplicación o proyecto.</p>
+            <h3>Modificadores de Acceso</h3>
+            <ul>
+                <li><strong>Public:</strong> Permite el acceso sin restricciones desde cualquier otra clase o ensamblado.</li>
+                <li><strong>Private:</strong> Restringe el acceso de manera exclusiva al interior de la clase donde se declara.</li>
+                <li><strong>Protected:</strong> Otorga visibilidad a la clase contenedora y a sus clases derivadas (herencia).</li>
+            </ul>
 
-            <h3>b) private</h3>
-            <p>El acceso está limitado estrictamente al interior de la clase donde fue declarado. Ninguna otra clase o miembro externo puede acceder a él directamente.</p>
-
-            <h3>c) protected</h3>
-            <p>El acceso está restringido a la clase contenedora o a los tipos derivados (clases hijas que hereden de la clase principal).</p>
-
-            <h3>d) internal</h3>
-            <p>El acceso está limitado únicamente a los archivos que formen parte del mismo ensamblado (proyecto compilado).</p>
-        </div>
-
-        <div class="seccion">
-            <h2>3. Ejemplo Práctico en C#</h2>
-            <p>A continuación se presenta un código de demostración que ilustra la implementación correcta de encapsulamiento y modificadores de acceso en una clase de C#:</p>
-
+            <h3>Ejemplo Práctico en C#</h3>
 <pre>
 using System;
 
-namespace ManualPOO
+namespace ManualGitHubCSharp
 {
-    // Clase principal
-    public class CuentaBancaria
+    public class Persona
     {
-        // Atributo privado: Encapsulado (no accesible desde fuera directamente)
-        private double saldo;
+        // Atributo privado (Encapsulado)
+        private string cedula;
 
-        // Atributo protegido: Accesible por clases derivadas
-        protected string tipoCuenta;
-
-        // Atributo público: Accesible desde cualquier lugar
-        public string Titular;
+        // Atributo público
+        public string Nombre;
 
         // Constructor
-        public CuentaBancaria(string titular, double saldoInicial)
+        public Persona(string nombre, string cedula)
         {
-            this.Titular = titular;
-            this.saldo = saldoInicial;
-            this.tipoCuenta = "Ahorros";
+            this.Nombre = nombre;
+            this.cedula = cedula;
         }
 
-        // Propiedad pública para lectura/escritura controlada del saldo
-        public double Saldo
+        // Método público para consultar el dato privado de forma segura
+        public string ObtenerCedula()
         {
-            get { return saldo; }
-        }
-
-        // Método público para depositar fondos de forma segura
-        public void Depositar(double monto)
-        {
-            if (monto > 0)
-            {
-                saldo += monto;
-                Console.WriteLine("Depósito exitoso. Nuevo saldo: " + saldo);
-            }
+            return cedula;
         }
     }
 }
@@ -177,8 +161,8 @@ namespace ManualPOO
         </div>
 
         <div class="seccion">
-            <h2>4. Conclusión</h2>
-            <p>El uso adecuado de los modificadores de acceso permite construir sistemas software robustos, mantenibles y seguros, impidiendo la manipulación inadecuada de los datos y garantizando la integridad de las clases.</p>
+            <h2>3. Conclusión</h2>
+            <p>La integración de herramientas de despliegue moderno como GitHub Pages combinada con los fundamentos de la programación orientada a objetos en C# permite estructurar documentación técnica clara, accesible y formal bajo normativas estandarizadas.</p>
         </div>
 
     </div>
